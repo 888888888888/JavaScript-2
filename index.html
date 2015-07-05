@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<title>Cordova is easy!</title>
+	<link rel="stylesheet" href="themes/layout.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('li').hover(function(){
+$(this).find('ul>li').fadeToggle(100);
+});
+});
+</script>
+<style type="text/css">
+ul li ul li{
+display:none;
+}
+</style>
+</head>
+<body>
+	<div data-role="page" id="main" data-theme="d">
+		<div data-role="header">
+			<h1>HOME</h1>
+			<div data-role="navbar">
+				<ul>
+					<li> <a href="#main" data-icon = "bullets">MENU</a>
+					<ul>
+						<li> <a href="#hello" data-icon = "bullets">HELLO WORLD!</a> </li>
+					</ul>
+					<ul>
+						<li> <a href="#jquery" data-icon = "bullets">JQUERY</a> </li>
+					</ul>
+					<ul>
+						<li> <a href="#html5" data-icon = "bullets">HTML5 features</a> </li>
+					</ul>
+					<li> <a href="#slider" data-icon = "arrow-d-r">OCEN NAS</a> </li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="main" class="ui-content">
+		
+		</div>
+		<div data-role="footer">
+			<h2>&copy; Krystian Kedron 2015</h2>
+		</div>
+	</div>
+	
+	<div data-role="page" id = "slider" data-theme="d">
+		<div data-role="header">
+			<h1>SILDER</h1>
+			<a href="#main" data-icon = "home">HOME</a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1> FORMULARZ KONTATKOWY </h1>
+			<form>
+				<label for="text"> Napisz co o nas myslisz! </label>
+				<textarea name="text" id="text"></textarea>
+				<label for="slider"> Twoja ocena!</label>
+				<input type="range" name="slider" id="slider" min = "0" max = "10" />
+				<input type="submit" name="submit" id="submit" value = "SUBMIT!" />
+			</form>
+		</div>
+		<div data-role="footer">
+			<h2>&copy; Krystian Kedron 2015</h2>
+		</div>
+	</div>
+	
+	<div data-role="page" id="hello">
+		<div data-role="header">
+			<h1>Hello mobile world!</h1>
+			<a href="#main" data-icon = "home">HOME</a>
+		</div>
+        <div data-role="content">In fact I didn't write any program by myself to create this app. <a href="#examples" data-role="button"> Examples.</a></div>
+        <div data-role="footer"></div>
+    </div>
+    <div data-role="page" id="examples">
+		<div data-role="header">
+			<h1>Examples</h1>
+			<a href="#main" data-icon = "home">HOME</a>
+		</div>
+        <div data-role="content"><a href="#hello" data-role="button">Hello world</a></div>
+        <div data-role="footer"></div>
+    </div>
+	
+	<div data-role="page" id="jquery">
+		<div data-role="header">
+			<h1>JQUERY</h1>
+			<a href="#main" data-icon = "home">HOME</a>
+		</div>
+       <div>See how it works...</div>
+		<div id="paragraphToHide">You will not see me!</div>
+		<div class="bold"></div>
+		<button>First button</button>
+		<button>Second button</button>
+		<script>
+			$("#paragraphToHide").hide();
+			$(".bold").html("Yes, this is an element with a css bold class.");
+			$("button:first").click(function () { $("#paragraphToHide").fadeIn(5000); });
+			$("button:last").click(function () { $("#paragraphToHide").fadeOut(2000); });
+		</script>
+
+    <br />
+    <a href="index.html">Back...</a>
+    </div>
+	
+	<div data-role="page" id="html5">
+		<div data-role="header">
+			<h1>HTML5 features</h1>
+			<a href="#main" data-icon = "home">HOME</a>
+		</div>
+		<div id="persistent">Here we will count permamently.</div>
+		<button onclick="clickCounterPersistent($('#persistent'));">Click for ever!</button>
+		<button onclick="clickCounterSessin($(this));">Click for session!</button>
+		<br />
+		<a href="index.html">Back...</a>
+    </div>
+</body>
+</html>
